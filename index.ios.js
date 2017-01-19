@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -17,7 +11,7 @@ export default class iClass extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Elon Is The King Of The World!!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
