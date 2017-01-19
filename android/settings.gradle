@@ -1,0 +1,3 @@
+rootProject.name = 'iClass'
+
+include ':app'
