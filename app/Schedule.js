@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-class First extends Component {
-  onButtonPress(id){
-    this.props.navigator.push({id: id});
+class Schedule extends Component {
+  popBack(){
+    this.props.navigator.pop();
   }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.largeText}>This Is The First Scene.</Text>
 
-        <TouchableHighlight style={styles.button} onPress={() => this.onButtonPress('Second')}>
-        <Text style={styles.buttonText}>Go To The Second Scene.</Text>
+        <Text style={styles.largeText}>
+        Schedule & Changes
+        </Text>
+
+        <TouchableHighlight style={styles.button} onPress={() => this.popBack()}>
+        <Text style={styles.buttonText}>Go Back To The Menu</Text>
         </TouchableHighlight>
 
-        <TouchableHighlight style={styles.button} onPress={() => this.onButtonPress('Third')}>
-        <Text style={styles.buttonText}>Go To The Third Scene.</Text>
-        </TouchableHighlight>
       </View>
     );
   }
 }
-const styles = StyleSheet.create ({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -46,7 +46,8 @@ const styles = StyleSheet.create ({
   },
   buttonText: {
     fontFamily: 'HelveticaNeue-CondensedBold',
+    fontSize: 32,
     color: '#fae596'
   }
 });
-module.exports = First;
+module.exports = Schedule;

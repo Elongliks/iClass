@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-class Second extends Component {
+class Teacher extends Component {
   popBack(){
     this.props.navigator.pop();
   }
@@ -9,10 +9,10 @@ class Second extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.largeText}>
-          This Is The Second Scene
+          Teacher Locator
         </Text>
         <TouchableHighlight style={styles.button} onPress={() => this.popBack()}>
-        <Text style={styles.buttonText}>Go Back To The First Scene.</Text>
+        <Text style={styles.buttonText}>Go Back To The Menu</Text>
         </TouchableHighlight>
       </View>
     );
@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontFamily: 'HelveticaNeue-CondensedBold',
+    fontSize: 32,
     color: '#fae596'
   }
 });
-module.exports = Second;
+module.exports = Teacher;

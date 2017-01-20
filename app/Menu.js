@@ -1,24 +1,35 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-class Third extends Component {
-  popBack(){
-    this.props.navigator.pop();
+class Menu extends Component {
+  onButtonPress(id){
+    this.props.navigator.push({id: id});
   }
   render() {
     return (
       <View style={styles.container}>
+
         <Text style={styles.largeText}>
-          This Is The Third Scene
+        iClass
         </Text>
-        <TouchableHighlight style={styles.button} onPress={() => this.popBack()}>
-        <Text style={styles.buttonText}>Go Back To The First Scene.</Text>
+
+        <TouchableHighlight style={styles.button} onPress={() => this.onButtonPress('Session')}>
+        <Text style={styles.buttonText}>My Class</Text>
         </TouchableHighlight>
+
+        <TouchableHighlight style={styles.button} onPress={() => this.onButtonPress('Schedule')}>
+        <Text style={styles.buttonText}>Schedule Changes</Text>
+        </TouchableHighlight>
+
+        <TouchableHighlight style={styles.button} onPress={() => this.onButtonPress('Teacher')}>
+        <Text style={styles.buttonText}>Teacher Locator</Text>
+        </TouchableHighlight>
+
       </View>
     );
   }
 }
-const styles = StyleSheet.create({
+const styles = StyleSheet.create ({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -43,7 +54,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontFamily: 'HelveticaNeue-CondensedBold',
+    fontSize: 32,
     color: '#fae596'
   }
 });
-module.exports = Third;
+module.exports = Menu;
