@@ -11,7 +11,7 @@ export default class iClass extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Elon Is The King Of The World!!
+          Elon Is The King Of The World TAHAT !!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
