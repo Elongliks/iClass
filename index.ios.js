@@ -1,47 +1,24 @@
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Navigator } from 'react-native';
+import First from './app/First';
+import Second from './app/Second';
+import Third from './app/Third';
 
 export default class iClass extends Component {
+  navigatorRenderScene(route, navigator) {
+    switch (route.id) {
+      case 'First':
+      return <First navigator={navigator} />
+      case 'Second':
+      return <Second navigator={navigator} />
+      case 'Third':
+      return <Third navigator={navigator} />
+    }
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Elon Is The King Of The World TAHAT !!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Navigator initialRoute={{id: 'First'}} renderScene={this.navigatorRenderScene} />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
 AppRegistry.registerComponent('iClass', () => iClass);
