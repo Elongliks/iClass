@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export default ({navigator}) =>
-
       <View style={styles.container}>
         <Text style={styles.largeText}>
           Teacher Locator
