@@ -1,12 +1,32 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Navigator } from 'react-native';
+import { StyleSheet, Text, Navigator, TouchableHighlight } from 'react-native';
 
 export default class Schedule extends Component {
-  
+  getInitialRoute(){
+    var date = new Date()
+    return date.getDay()
+  }
     render() {
+      const routes = [
+      {title: 'Sunday', index: 0},
+      {title: 'Monday', index: 1},
+      {title: 'Tuesday', index: 2},
+      {title: 'Wednesday', index: 3},
+      {title: 'Thursday', index: 4},
+      {title: 'Friday', index: 5},
+    ];
     return (
-      <Text>Hey</Text>
-    )
+      <Navigator
+        initialRoute={routes[this.getInitialRoute()]}
+        initialRouteStack={routes}
+        configureScene={(route, routeStack) => Navigator.SceneConfigs.SwipeFromLeft}
+        renderScene={(route, navigator) =>
+          <TouchableHighlight>
+          <Text>Hello {route.title}!</Text>
+          </TouchableHighlight>
+        }
+      />
+    );
   }
 }
 const styles = StyleSheet.create ({
