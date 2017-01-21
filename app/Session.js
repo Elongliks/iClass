@@ -1,23 +1,16 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-class Session extends Component {
-  popBack(){
-    this.props.navigator.pop();
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.largeText}>
-          My Class
-        </Text>
-        <TouchableHighlight style={styles.button} onPress={() => this.popBack()}>
-        <Text style={styles.buttonText}>Go Back To The Menu</Text>
-        </TouchableHighlight>
-      </View>
-    );
-  }
-}
+export default ({navigator}) =>
+  <View style={styles.container}>
+    <Text style={styles.largeText}>
+      My Class
+    </Text>
+    <TouchableHighlight style={styles.button} onPress={() => navigator.pop()}>
+    <Text style={styles.buttonText}>Go Back To The Menu</Text>
+    </TouchableHighlight>
+  </View>
+
 const styles = StyleSheet.create ({
   container: {
     flex: 1,
@@ -47,4 +40,3 @@ const styles = StyleSheet.create ({
     color: '#fae596'
   }
 });
-module.exports = Session;

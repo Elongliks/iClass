@@ -1,33 +1,27 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-class Menu extends Component {
-  onButtonPress(id){
-    this.props.navigator.push({id: id});
-  }
-  render() {
-    return (
+export default ({navigator}) =>
+
       <View style={styles.container}>
         <Text style={styles.largeText}>
-        iClass
+          iClass
         </Text>
 
-        <TouchableHighlight style={styles.button} onPress={() => this.onButtonPress('Session')}>
-        <Text style={styles.buttonText}>My Class</Text>
+        <TouchableHighlight style={styles.button} onPress={() => navigator.push({id: 'Session'})}>
+          <Text style={styles.buttonText}>My Class</Text>
         </TouchableHighlight>
 
-        <TouchableHighlight style={styles.button} onPress={() => this.onButtonPress('Schedule')}>
+        <TouchableHighlight style={styles.button} onPress={() => navigator.push({id: 'Schedule'})}>
         <Text style={styles.buttonText}>Schedule Changes</Text>
         </TouchableHighlight>
 
-        <TouchableHighlight style={styles.button} onPress={() => this.onButtonPress('Teacher')}>
+        <TouchableHighlight style={styles.button} onPress={() => navigator.push({id: 'Teacher'})}>
         <Text style={styles.buttonText}>Teacher Locator</Text>
         </TouchableHighlight>
 
       </View>
-    );
-  }
-}
+
 const styles = StyleSheet.create ({
   container: {
     flex: 1,
@@ -57,4 +51,3 @@ const styles = StyleSheet.create ({
     color: '#fae596'
   }
 });
-module.exports = Menu;
