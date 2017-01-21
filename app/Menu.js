@@ -8,7 +8,6 @@ class Menu extends Component {
   render() {
     return (
       <View style={styles.container}>
-
         <Text style={styles.largeText}>
         iClass
         </Text>
